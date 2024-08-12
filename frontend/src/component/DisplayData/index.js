@@ -7,7 +7,7 @@ class DisplayData extends Component{
     }
     getData = async () => {
         try {
-            const response = await fetch("http://localhost:3001/api/data");
+            const response = await fetch("/api/data");
             console.log("Data fetching",response);
             const jsonData = await response.json();
             console.log("Data received:", jsonData);

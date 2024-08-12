@@ -5,7 +5,7 @@ const cors = require('cors');
 const app = express();
 app.use(cors());
 app.use(express.json());
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 3000;
 const username = encodeURIComponent("charansai9247");
 const password = encodeURIComponent("Charansai@21");
 const uri = `mongodb+srv://${username}:${password}@cluster0.jj10vja.mongodb.net/`;
@@ -24,11 +24,6 @@ const connectToMongodb = async ()=>{
     }
 };
 connectToMongodb();
-
-app.get("/test", (req, res) => {
-    console.log("Test endpoint was hit");
-    res.send("Test successful");
-});
 
 
 app.get("/api/data", async (request, response) => {
